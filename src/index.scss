@@ -1,0 +1,347 @@
+@import "./styles/normalize";
+@import "./styles/fonts";
+@import "./styles/colors";
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Rubik', sans-serif;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	width: 1440px;
+	height: 100%;
+	display: flex;
+	padding: 0 0 20px 0;
+	box-sizing: border-box;
+	gap: 50px;
+
+	@media all and (max-width:1000px) {
+		flex-direction: column;
+		align-items: center;
+	}
+}
+
+.illustration {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	position: relative;
+}
+
+.phone {
+	margin: 0;
+	width: 285px;
+	height: max-content;
+	background: #000;
+	background: hsl(264, 26%, 96%);
+	border-radius: 30px;
+	outline: 15px solid var(--white);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 90px 10px 10px 10px;
+	box-sizing: border-box;
+	position: absolute;
+	top: 50px;
+	right: 10px;
+
+	@media all and (max-width:1000px) {
+		width: 255px;
+		right: 0;
+	}
+
+	@media all and (max-width:400px) {
+		right: -30%;
+	}
+
+	&__fringe {
+		width: 50%;
+		height: 30px;
+		background: var(--white);
+		border-radius: 20px;
+		position: absolute;
+		top: -14px;
+		left: 25%;
+	}
+
+	&__dog-images {
+		align-self: flex-end;
+	}
+
+	&__walk-price {
+		width: 70%;
+	}
+}
+
+.top {
+	display: flex;
+	align-items: center;
+	background: linear-gradient(to left, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 30px 10px 15px 10px;
+	border-radius: 30px 30px 10px 10px;
+	box-sizing: border-box;
+	gap: 10px;
+
+	&__back {
+		border: none;
+		background: transparent;
+		width: max-content;
+		height: max-content;
+		cursor: pointer;
+
+		i {
+			color: var(--white);
+			font-size: 12px;
+		}
+	}
+
+	&__avatar {
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		outline: 1px solid var(--white);
+	}
+
+	&__desc {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__name {
+		display: block;
+		font-size: 12px;
+		font-weight: 500;
+		color: var(--white);
+	}
+
+	&__status {
+		display: block;
+		font-size: 10px;
+		font-weight: 400;
+		color: hsl(276, 100%, 81%);
+	}
+
+	&__more {
+		border: none;
+		background: transparent;
+		width: max-content;
+		height: max-content;
+		margin-left: auto;
+		cursor: pointer;
+
+		i {
+			color: var(--white);
+			font-size: 12px;
+		}
+	}
+}
+
+.dog-images {
+	display: flex;
+	gap: 10px;
+
+	&__img {
+		width: 50px;
+		border-radius: 15px;
+
+		@media all and (max-width:1000px) {
+			width: 40px;
+		}
+	}
+}
+
+.message {
+	width: max-content;
+	display: block;
+	font-weight: 400;
+	font-size: 10px;
+	line-height: 1.4;
+	padding: 10px;
+
+	@media all and (max-width:1000px) {
+		font-size: 8px;
+		padding: 8px;
+	}
+
+	&_left {
+		color: hsl(276, 55%, 52%);
+		background: hsl(272, 41%, 93%);
+		border-radius: 20px 20px 20px 5px;
+		align-self: flex-start;
+	}
+
+	&_right {
+		color: hsl(271, 15%, 43%);
+		background: var(--white);
+		border-radius: 20px 20px 5px 20px;
+		align-self: flex-end;
+	}
+}
+
+.walk-price {
+	padding: 15px 20px 15px 10px;
+	box-sizing: border-box;
+	background: linear-gradient(to right, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border-radius: 20px 20px 20px 5px;
+	cursor: pointer;
+
+	@media all and (max-width:1000px) {
+		padding: 10px 15px 10px 10px;
+	}
+
+	label {
+		width: 15px;
+		height: 15px;
+		background: #000;
+		border-radius: 50%;
+		outline: 2px solid var(--radio-btn-outline);
+		background: transparent;
+
+		@media all and (max-width:1000px) {
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	&__radio {
+		display: none;
+
+		&:checked+label {
+			background: var(--white);
+		}
+	}
+
+	&__desc {
+		font-weight: 400;
+		font-size: 10px;
+
+		@media all and (max-width:1000px) {
+			font-size: 8px;
+		}
+	}
+
+	&__cost {
+		font-weight: 700;
+		font-size: 12px;
+		margin-left: auto;
+
+		@media all and (max-width:1000px) {
+			font-size: 10px;
+		}
+	}
+}
+
+.message-input {
+	width: 100%;
+	height: 40px;
+	display: flex;
+	margin-top: auto;
+	position: relative;
+
+	input {
+		width: 100%;
+		height: 100%;
+		border-radius: 40px;
+		border: none;
+		padding: 20px;
+		box-sizing: border-box;
+		font-size: 12px;
+		font-weight: 400;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder {
+			color: var(--placeholder-text);
+		}
+	}
+
+	&__submit {
+		position: absolute;
+		right: 5px;
+		top: 5px;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		border: none;
+		background: hsl(271, 36%, 24%);
+		cursor: pointer;
+
+		&::before {
+			content: '';
+			width: 6px;
+			height: 6px;
+			border-top: 3px solid var(--white);
+			border-right: 3px solid var(--white);
+			position: absolute;
+			transform: rotate(45deg);
+			top: calc(50% - 4px);
+			right: 12px;
+		}
+	}
+}
+
+.background {
+	width: 70%;
+	height: 100%;
+	background: linear-gradient(to bottom, hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+	border-radius: 0 0 250px 250px;
+	position: absolute;
+	top: 0;
+
+	@media all and (max-width:1000px) {
+		width: 100%;
+		min-width: 400px;
+		left: -90%;
+	}
+
+	@media all and (max-width:400px) {
+		left: -150%;
+	}
+}
+
+.desc {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 30px;
+
+	&__title {
+		margin: 0;
+		font-weight: 700;
+		font-size: 28px;
+		color: var(--main-heading);
+
+		@media all and (max-width:1000px) {
+			font-size: 24px;
+		}
+	}
+
+	&__text {
+		margin: 0;
+		font-weight: 400;
+		font-size: 16px;
+		color: var(--paragraph);
+		line-height: 1.6;
+
+		@media all and (max-width:1000px) {
+			font-size: 12px;
+		}
+	}
+}
